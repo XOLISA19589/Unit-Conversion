@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unit Conversion</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body class = "distance-page">
+    <section id="top">
+        <header>Unit Conversions</header>
+        <nav>
+            <div class="topdiv">
+                <a href="temperature.html">Temperature</a>
+                <a href="weight.html">Weight</a>
+                <a href="#distance">Distance</a>
+            </div>
+        </nav>
+    </section>
+    
+    <div id="all-conversion-sections">
+        <section id="distance" class="b distance">
+            <div id="dst">
+                <figure>
+                    <img src="images/distance.png" width="150px" />
+                    <figcaption>Kilometers to Miles Conversion</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>Distance</legend>
+                        <label for="km">KM</label> <br />
+                        <input type="number" id="km"> <br />
+                        <button id="convert-distance"> Convert </button> <br />
+                        <input type="number" id="miles"> <br />
+                        <label for="miles">Miles</label>
+                    </fieldset>
+                    <aside>
+                        To convert kilometers to miles yourself, use this formula replacing the `km` with your distance
+                        in kilmeters: km &divide; 1.609
+                    </aside>
+
+                </article>
+            </div>
+        </section>
+        <div style="clear:both;"></div>
+    </div>
+
+        <div id="go-home">
+        <a href="index.html">
+            <img
+                src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg" />
+        </a>
+    </div>
+
+    <footer>HTML, CSS, and JavaScript are used to build a Unit Conversion Web App</footer>
+
+    <script>
+        document.getElementById('convert-distance').addEventListener('click', function () {
+            let km = parseFloat(document.getElementById('km').value);
+            if (!isNaN(km)) {
+                let miles = km / 1.609;
+                document.getElementById('miles').value = miles.toFixed(3);
+            }
+        });
+    </script>
+</body>
+
+</html>

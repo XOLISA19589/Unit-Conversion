@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unit Conversion</title>
+    <link rel="stylesheet" href="style4.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class = "temperature-page">
+    <section id="top">
+        <header>Unit Conversions</header>
+        <nav>
+            <div class="topdiv">
+                <a href="#temperature">Temperature</a>
+                <a href="weight.html">Weight</a>
+                <a href="distance.html">Distance</a>
+            </div>
+        </nav>
+    </section>
+    
+    <div id="all-conversion-sections">
+        <section id="temperature" class="b temperature">
+            <div id="tmp">
+                <figure>
+                    <img src="images/temperature.jpg" width="150px" />
+                    <figcaption>Celcius to Farenheit Conversion</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>Temperature</legend>
+                        <label for="celsius">Celsius</label> <br />
+                        <input type="number" id="celsius"> <br />
+                        <button id="convert-temperature"> Convert </button> <br />
+                        <input type="number" id="fahrenheit"> <br />
+                        <label for="fahrenheit">Fahrenheit</label>
+                    </fieldset>
+                    <aside>
+                        To convert celsuis to fahrenheit yourself, use this formula replacing the `C` with your
+                        temperature in celsuis: (C— 9/5) + 32
+                    </aside>
+                </article>
+            </div>
+        </section>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div id="go-home">
+        <a href="index.html">
+            <img
+                src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg" />
+        </a>
+    </div>   
+
+    <footer>HTML, CSS, and JavaScript are used to build a Unit Conversion Web App</footer>
+
+    <script>
+        document.getElementById('convert-temperature').addEventListener('click', function () {
+            let celsius = parseFloat(document.getElementById('celsius').value);
+            if (!isNaN(celsius)) {
+                let fahrenheit = (celsius * 9 / 5) + 32;
+                document.getElementById('fahrenheit').value = fahrenheit.toFixed(3);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unit Conversion</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body class = "weight-page">
+    <section id="top">
+        <header>Unit Conversions</header>
+        <nav>
+            <div class="topdiv">
+                <a href="temperature.html">Temperature</a>
+                <a href="#weight">Weight</a>
+                <a href="distance.html">Distance</a>
+            </div>
+        </nav>
+        
+    <div id="all-conversion-sections">
+        <section id="weight" class="b weight">
+            <div id="wgt">
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png"
+                        width="150px" />
+                    <figcaption>Kilograms to Pound Conversion</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>Weight</legend>
+                        <label for="kilo">KG</label> <br />
+                        <input type="number" id="kilo"> <br />
+                        <button id="convert-weight"> Convert </button> <br />
+                        <input type="number" id="pounds"> <br />
+                        <label for="pounds">Pounds</label>
+                    </fieldset>
+                    <aside>
+                        To convert kilograms to pounds yourself, use this formula replacing the `kg` with your weight in
+                        kilograms: kg x 2.205
+                    </aside>
+                </article>
+            </div>
+        </section>
+        <div style="clear:both;"></div>
+    </div>
+
+        <div id="go-home">
+            <a href="index.html">
+                <img
+                    src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg" />
+            </a>
+        </div>
+    
+        <footer>HTML, CSS, and JavaScript are used to build a Unit Conversion Web App</footer>
+
+    <script>
+        document.getElementById('convert-weight').addEventListener('click', function () {
+            let kg = parseFloat(document.getElementById('kilo').value);
+            if (!isNaN(kg)) {
+                let pounds = kg * 2.205;
+                document.getElementById('pounds').value = pounds.toFixed(3);
+            }
+        });
+    </script>
+</body>
+
+</html>
